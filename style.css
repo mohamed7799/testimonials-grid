@@ -1,0 +1,150 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+.violet {
+  background-color: #7541c8;
+  background-image: url("./img/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position-x: 80%;
+  color: white;
+}
+
+.violet .user__img {
+  border: 2px solid white;
+}
+
+.gray {
+  background-color: #48556a;
+  color: white;
+}
+
+.gray .user__img {
+  border: 2px solid white;
+}
+
+.dark {
+  background-color: #19212e;
+  color: white;
+}
+
+.dark .user__img {
+  border: 2px solid #7541c8;
+}
+
+.white {
+  background-color: white;
+  color: #19212e;
+}
+
+.grid-v {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: v;
+}
+
+.grid-g {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: g;
+}
+
+.grid-d {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: d;
+}
+
+.grid-w {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: w;
+}
+
+.grid-w2 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 4;
+  grid-area: w2;
+}
+
+.main-content {
+  background-color: #ecf2f8;
+  padding: 4rem;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(128, 128, 128, 0.363);
+          box-shadow: 0px 0px 5px 5px rgba(128, 128, 128, 0.363);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+      grid-template-areas: "v v g w2" "w d d w2";
+}
+
+.card {
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(128, 128, 128, 0.199);
+          box-shadow: 0px 0px 5px 5px rgba(128, 128, 128, 0.199);
+  padding: 2rem;
+}
+
+.card > * {
+  margin-bottom: 1.5rem;
+}
+
+.user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user__img {
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.user__info span {
+  margin-top: 0.5rem;
+  opacity: 50%;
+}
+
+.test {
+  opacity: 70%;
+}
+
+@media screen and (max-width: 1200px) {
+  .main-content {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: none;
+  }
+  .grid-v,
+  .grid-g,
+  .grid-d,
+  .grid-w,
+  .grid-w2 {
+    grid-area: auto;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main-content {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}

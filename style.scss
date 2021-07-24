@@ -1,0 +1,140 @@
+//variables
+
+$Moderate-violet: hsl(263, 55%, 52%);
+$Very-dark-grayish-blue: hsl(217, 19%, 35%);
+$Very-dark-blackish-blue: hsl(219, 29%, 14%);
+$White: hsl(0, 0%, 100%);
+
+$Light-gray: hsl(0, 0%, 81%);
+$Light-grayish-blue: hsl(210, 46%, 95%);
+
+//reset
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+//
+
+.violet {
+  background-color: $Moderate-violet;
+  background-image: url("./img/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position-x: 80%;
+  color: $White;
+  & .user__img {
+    border: 2px solid $White;
+  }
+}
+
+.gray {
+  background-color: $Very-dark-grayish-blue;
+  color: $White;
+  & .user__img {
+    border: 2px solid $White;
+  }
+}
+
+.dark {
+  background-color: $Very-dark-blackish-blue;
+  color: $White;
+  & .user__img {
+    border: 2px solid $Moderate-violet;
+  }
+}
+
+.white {
+  background-color: $White;
+  color: $Very-dark-blackish-blue;
+}
+
+.grid-v {
+  grid-area: v;
+}
+
+.grid-g {
+  grid-area: g;
+}
+
+.grid-d {
+  grid-area: d;
+}
+
+.grid-w {
+  grid-area: w;
+}
+
+.grid-w2 {
+  grid-area: w2;
+}
+
+.main-content {
+  background-color: $Light-grayish-blue;
+  padding: 4rem;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 5px rgba(128, 128, 128, 0.363);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  grid-template-areas:
+    "v v g w2"
+    "w d d w2";
+}
+
+.card {
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 5px rgba(128, 128, 128, 0.199);
+  padding: 2rem;
+  & > * {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.user__img {
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.user__info {
+  & span {
+    margin-top: 0.5rem;
+    opacity: 50%;
+  }
+}
+
+.test {
+  opacity: 70%;
+}
+
+@media screen and (max-width: 1200px) {
+  .main-content {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: none;
+  }
+  .grid-v,
+  .grid-g,
+  .grid-d,
+  .grid-w,
+  .grid-w2 {
+    grid-area: auto;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}
